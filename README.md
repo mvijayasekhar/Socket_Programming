@@ -1,1 +1,2 @@
-# Socket_Programming
+# Socket Programming
+Socket samples for Linux and WinRT
