@@ -1,3 +1,12 @@
+/** @mainpage   Implementing TCP Socket 
+ *  @file		Client.c
+ *  @brief		TCP client program
+ *  @author		Vijaya Sekhar M
+ *  @date		August 2015
+ *  @version	1.0
+ *  @bug		No known bugs.
+ */ 
+
 #include	"SimpleTCP.h"
 
 int main(int argc ,char *argv[])
@@ -52,12 +61,10 @@ int main(int argc ,char *argv[])
 		fprintf(stderr,"%s\n",strerror(errno));
 		exit(EXIT_FAILURE);
 	}
-	printf("Message Read: %s\n",buf);
+	printf("Message Read %s\n",buf);
 
 	free(buf);
 	close(sock_fd);
 
 	return 0;
 }
-
-

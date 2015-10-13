@@ -1,13 +1,22 @@
+/** @mainpage   Implementing TCP Socket 
+ *  @file		Server.c
+ *  @brief		TCP server program
+ *  @author		Vijaya Sekhar M
+ *  @date		August 2015
+ *  @version	1.0
+ *  @bug		No known bugs.
+ */ 
+
 #include	"SimpleTCP.h"
 
-int main(int argc ,char *argv[])
+int main(int argc, char *argv[])
 {
 	int sock_fd, new_fd;
 	SOCK_ADDR_IN ser_var,cli_var;
 	long addr;
 	unsigned int len;
 	char *buf = NULL;
-	char *var = "From Global Edge";
+	char *var = "by Server";
 
 	if (argc <= 1) {
 		fprintf(stderr,"usage: <a.out><ip-addr>\n");
@@ -57,7 +66,7 @@ int main(int argc ,char *argv[])
 			fprintf(stderr,"recv: %s\n",strerror(errno));
 			exit(EXIT_FAILURE);
 		}
-		printf("Message Read: %s",buf);
+		printf("Message Read %s",buf);
 		if(-1 == send(new_fd,var,MAX,0)) {
 			fprintf(stderr,"send:%s\n",strerror(errno));
 			exit(EXIT_FAILURE);
@@ -67,6 +76,5 @@ int main(int argc ,char *argv[])
 	free(buf);
 	close(new_fd);
 	close(sock_fd);
-
 }
 
