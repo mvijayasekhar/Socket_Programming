@@ -1,10 +1,10 @@
 /** @mainpage   Implementing TCP Socket 
- *  @file		Server.c
- *  @brief		TCP server program
- *  @author		Vijaya Sekhar M
- *  @date		August 2015
+ *  @file	Server.c
+ *  @brief	TCP server program
+ *  @author	Vijaya Sekhar M
+ *  @date	August 2015
  *  @version	1.0
- *  @bug		No known bugs.
+ *  @bug	No known bugs.
  */ 
 
 #include	"SimpleTCP.h"
