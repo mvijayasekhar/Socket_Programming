@@ -1,10 +1,10 @@
 /** @mainpage   Implementing TCP Socket 
- *  @file		SimpleTCP.h
- *  @brief		Include all headers and macros
- *  @author		Vijaya Sekhar M
- *  @date		August 2015
- *  @version	1.0
- *  @bug		No known bugs.
+ *  @file		    SimpleTCP.h
+ *  @brief		  Include all headers and macros
+ *  @author		  Vijaya Sekhar M
+ *  @date		    August 2015
+ *  @version	  1.0
+ *  @bug		    No known bugs.
  */ 
 
 #ifndef _MY_HEADER_
