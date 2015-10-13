@@ -1,15 +1,15 @@
 /** @mainpage   Implementing TCP Socket 
- *  @file		Client.c
- *  @brief		TCP client program
- *  @author		Vijaya Sekhar M
- *  @date		August 2015
+ *  @file	Client.c
+ *  @brief	TCP client program
+ *  @author	Vijaya Sekhar M
+ *  @date	August 2015
  *  @version	1.0
- *  @bug		No known bugs.
+ *  @bug	No known bugs.
  */ 
 
 #include	"SimpleTCP.h"
 
-int main(int argc ,char *argv[])
+int main(int argc, char *argv[])
 {
 	int sock_fd;
 	SOCK_ADDR_IN cli_var;
