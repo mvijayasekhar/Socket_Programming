@@ -6,18 +6,17 @@ TARGET2=CLIENT
 
 HEADER= -I ./Header
 
-CFLAGS=-g -Wall
+CFLAGS=-g -Wall -lsctp
 
+LIB=-lsctp
 
 $(TARGET1) : Server.o Client.o
-	gcc $(CFLAGS) -o $(TARGET1) Server.o $(HEADER)
-	gcc $(CFLAGS) -o $(TARGET2) Client.o $(HEADER)
+	gcc $(CFLAGS) -o $(TARGET1) Server.o $(HEADER) $(LIB)
+	gcc $(CFLAGS) -o $(TARGET2) Client.o $(HEADER) $(LIB)
 	mv *.o ./Obj
 
 %.o : %.c
-	gcc $(CFLAGS) -c $< $(HEADER)
-		
-
+	gcc $(CFLAGS) -c $< $(HEADER) $(LIB)
 
 clean :
 	rm -f $(TARGET1) $(TARGET2)
