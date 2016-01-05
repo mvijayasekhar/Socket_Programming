@@ -11,9 +11,9 @@
 #include    <arpa/inet.h>
 #include    <sys/socket.h>
 #include    <netinet/ip.h>
-#include 	<linux/if_ether.h>
+#include    <linux/if_ether.h>
 
-#define		MAX_SIZE 65535
+#define     MAX_SIZE 65535
 
 #include	"EthHeader.h"
 #include	"IpHeader.h"
