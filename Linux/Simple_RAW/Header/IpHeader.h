@@ -1,7 +1,7 @@
 #ifndef __IP_HEADER__
 #define __IP_HEADER__
 
-struct ip_header{                                                              
+typedef struct ip_header{                                                              
 	unsigned char ver:4;                                                    
 	unsigned char hlen:4;                                                   
 	unsigned char tos;                                                      
@@ -14,6 +14,6 @@ struct ip_header{
 	unsigned short int check_sum;                                           
 	unsigned int s_addr;                                                    
 	unsigned int d_addr;                                                    
-} *ip_hdr;
+} ip_header_t, *ip_header_p;
   
 #endif

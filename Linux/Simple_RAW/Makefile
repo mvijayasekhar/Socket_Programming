@@ -1,17 +1,15 @@
 
 VPATH=:./Header/:./Src/:./Obj
 
-TARGET1=SERVER
-TARGET2=CLIENT
+TARGET=RawSocket
 
 HEADER= -I ./Header
 
 CFLAGS=-g -Wall
 
 
-$(TARGET1) : Server.o Client.o
-	gcc $(CFLAGS) -o $(TARGET1) Server.o $(HEADER)
-	gcc $(CFLAGS) -o $(TARGET2) Client.o $(HEADER)
+$(TARGET) : RawSocket.o PrintEthHeader.o PrintIPHeader.o PrintTCPHeader.o PrintUDPHeader.o  
+	gcc $(CFLAGS) -o $(TARGET) $^ $(HEADER)
 	mv *.o ./Obj
 
 %.o : %.c
@@ -20,7 +18,7 @@ $(TARGET1) : Server.o Client.o
 
 
 clean :
-	rm -f $(TARGET1) $(TARGET2)
+	rm -f $(TARGET) 
 	rm -f ./Obj/*
 	rm -f *.o
 

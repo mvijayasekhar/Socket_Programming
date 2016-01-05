@@ -1,8 +1,8 @@
 #ifndef __ETH_HEADER__
 #define __ETH_HEADER__
-struct ethernet_header{                                                              
+typedef struct ethernet_header{                                                              
 	unsigned char d_mac[6];                                                 
 	unsigned char s_mac[6];                                                 
 	unsigned short int type;                                                
-} *eth_hdr;
+} ethernet_header_t, *ethernet_header_p;
 #endif

@@ -1,7 +1,7 @@
 #ifndef __TCP_HEADER__
 #define __TCP_HEADER__
 
-struct tcp_header{                                                             
+typedef struct tcp_header{                                                             
 	unsigned short int src_port;                                            
 	unsigned short int dest_port;                                           
 	unsigned int seq_no;                                                    
@@ -19,6 +19,6 @@ struct tcp_header{
 	unsigned short int win_size;                                            
 	unsigned short int check_sum;                                           
 	unsigned short int urg_ptr;                                             
-} *tcp_hdr;
+} tcp_header_t, *tcp_header_p;
 
 #endif
