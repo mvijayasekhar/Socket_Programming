@@ -16,16 +16,12 @@ int main()
 			exit(-1);
 		}
 		print_eth_header((ethernet_header_p)buff);
-		protocol = print_ip_header((ip_header_p)(buff + 
-									sizeof(ethernet_header_t)));
+		protocol = print_ip_header((ip_header_p)(buff + sizeof(ethernet_header_t)));
 		if (protocol == 0x6) {
-			print_tcp_header((tcp_header_p)(buff + sizeof(ethernet_header_t) + 
-									sizeof(ip_header_t))); 
+			print_tcp_header((tcp_header_p)(buff + sizeof(ethernet_header_t) + sizeof(ip_header_t))); 
 		} else if(protocol == 0x11) {
-			print_udp_header((udp_header_p)(buff + sizeof(ethernet_header_t) + 
-									sizeof(ip_header_t))); 
+			print_udp_header((udp_header_p)(buff + sizeof(ethernet_header_t) + sizeof(ip_header_t))); 
 		}
-
 	}
 	return 0;
 }
