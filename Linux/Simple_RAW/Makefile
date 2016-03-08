@@ -1,16 +1,16 @@
 
-VPATH=:./Header/:./Src/:./Obj
+VPATH=:./inc/:./src/:./obj
 
 TARGET=RawSocket
 
-HEADER= -I ./Header
+HEADER= -I ./inc
 
 CFLAGS=-g -Wall
 
 
 $(TARGET) : RawSocket.o PrintEthHeader.o PrintIPHeader.o PrintTCPHeader.o PrintUDPHeader.o  
 	gcc $(CFLAGS) -o $(TARGET) $^ $(HEADER)
-	mv *.o ./Obj
+	mv *.o ./obj
 
 %.o : %.c
 	gcc $(CFLAGS) -c $< $(HEADER)
@@ -19,11 +19,11 @@ $(TARGET) : RawSocket.o PrintEthHeader.o PrintIPHeader.o PrintTCPHeader.o PrintU
 
 clean :
 	rm -f $(TARGET) 
-	rm -f ./Obj/*
+	rm -f ./obj/*
 	rm -f *.o
 
 rmbackup : 
 	rm -f *~
-	rm -f ./Src/*~
-	rm -f ./Header/*~
+	rm -f ./src/*~
+	rm -f ./inc/*~
 
