@@ -1,10 +1,10 @@
 
-VPATH=:./Header/:./Src/:./Obj
+VPATH=:./inc/:./src/:./bbj
 
 TARGET1=SERVER
 TARGET2=CLIENT
 
-HEADER= -I ./Header
+HEADER= -I ./inc
 
 CFLAGS=-g -Wall
 
@@ -12,7 +12,7 @@ CFLAGS=-g -Wall
 $(TARGET1) : Server.o Client.o
 	gcc $(CFLAGS) -o $(TARGET1) Server.o $(HEADER)
 	gcc $(CFLAGS) -o $(TARGET2) Client.o $(HEADER)
-	mv *.o ./Obj
+	mv *.o ./obj
 
 %.o : %.c
 	gcc $(CFLAGS) -c $< $(HEADER)
@@ -21,11 +21,11 @@ $(TARGET1) : Server.o Client.o
 
 clean :
 	rm -f $(TARGET1) $(TARGET2)
-	rm -f ./Obj/*
+	rm -f ./obj/*
 	rm -f *.o
 
 rmbackup : 
 	rm -f *~
-	rm -f ./Src/*~
-	rm -f ./Header/*~
+	rm -f ./src/*~
+	rm -f ./inc/*~
 
